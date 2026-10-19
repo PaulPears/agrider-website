@@ -179,6 +179,40 @@ export const Features: React.FC = () => {
           })}
         </div>
 
+        {/* Two-Wheeler Ergonomics Highlight Banner */}
+        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#071E14] via-[#0A2418] to-[#03150D] border border-[#20D77A]/30 mb-12 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-5 rounded-2xl overflow-hidden shadow-xl border border-[#163B27]">
+              <img 
+                src="/images/bike_taxi_rider.jpg" 
+                alt="Two-wheeler delivery captain on motorbike" 
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="lg:col-span-7 space-y-4">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#20D77A] font-mono">
+                🏍️ Specialized for Two-Wheeler Captains
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white font-heading">
+                Why Bike Captains Depend on AG Rider
+              </h3>
+              <p className="text-sm text-[#A9C1B3] leading-relaxed">
+                Riding a motorcycle while monitoring incoming ride requests requires split-second decisions. AG Rider acts as your virtual co-pilot—automatically screening offers by fare and distance so you never have to fumble with riding gloves or take your eyes off chaotic city traffic.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-xs text-[#8AE7B6]">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#20D77A] shrink-0" />
+                  <span>Gloves-Safe Auto Accept</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#20D77A] shrink-0" />
+                  <span>Handlebar Mount Vibration Resilient</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Disclaimer Callout */}
         <div className="p-6 rounded-2xl bg-[#071E14] border border-[#163B27] mb-12 flex items-start gap-4 text-xs text-[#748D7D] leading-relaxed">
           <AlertCircle className="w-5 h-5 text-[#20D77A] shrink-0 mt-0.5" />

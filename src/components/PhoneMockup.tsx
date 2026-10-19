@@ -49,7 +49,7 @@ export const PhoneMockup: React.FC<PhoneMockupProps> = ({ className = '' }) => {
       </div>
 
       {/* Phone Frame */}
-      <div className="relative w-[300px] sm:w-[330px] rounded-[44px] p-3 bg-gradient-to-b from-[#163B27] to-[#0A2418] shadow-2xl border-4 border-[#103424]">
+      <div className="relative w-full max-w-[310px] sm:max-w-[330px] rounded-[44px] p-3 bg-gradient-to-b from-[#163B27] to-[#0A2418] shadow-2xl border-4 border-[#103424]">
         
         {/* Inner Phone Bezel */}
         <div className="relative rounded-[36px] bg-[#03150D] overflow-hidden border border-[#20D77A]/20 shadow-inner min-h-[580px] flex flex-col">

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import QRCode from 'qrcode';
 import { 
   Download as DownloadIcon, 
   ShieldCheck, 
@@ -17,6 +18,22 @@ import { APP_CONFIG } from '../data/content';
 export const Download: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const [downloadStarted, setDownloadStarted] = useState(false);
+  const [qrCodeDataUrl, setQrCodeDataUrl] = useState<string>('');
+
+  useEffect(() => {
+    // Generate real scannable QR code directing mobile devices to the download page
+    const mobileDownloadUrl = `${APP_CONFIG.siteUrl}/download`;
+    QRCode.toDataURL(mobileDownloadUrl, {
+      width: 240,
+      margin: 1,
+      color: {
+        dark: '#03150D',
+        light: '#FFFFFF',
+      },
+    })
+      .then((url) => setQrCodeDataUrl(url))
+      .catch((err) => console.error('Failed to generate QR code', err));
+  }, []);
 
   const handleCopyHash = () => {
     navigator.clipboard.writeText(APP_CONFIG.sha256);
@@ -122,48 +139,25 @@ export const Download: React.FC = () => {
 
             {/* Right: QR Code for Mobile Scanning */}
             <div className="lg:col-span-4 p-6 rounded-2xl bg-[#03150D]/80 border border-[#163B27] text-center flex flex-col items-center justify-center">
-              <div className="p-3 bg-white rounded-xl mb-3 shadow-md">
-                {/* SVG QR Code representation */}
-                <svg width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="100" height="100" fill="white"/>
-                  {/* Position squares */}
-                  <rect x="10" y="10" width="24" height="24" rx="2" fill="#03150D"/>
-                  <rect x="14" y="14" width="16" height="16" rx="1" fill="white"/>
-                  <rect x="18" y="18" width="8" height="8" fill="#20D77A"/>
-                  
-                  <rect x="66" y="10" width="24" height="24" rx="2" fill="#03150D"/>
-                  <rect x="70" y="14" width="16" height="16" rx="1" fill="white"/>
-                  <rect x="74" y="18" width="8" height="8" fill="#20D77A"/>
-
-                  <rect x="10" y="66" width="24" height="24" rx="2" fill="#03150D"/>
-                  <rect x="14" y="70" width="16" height="16" rx="1" fill="white"/>
-                  <rect x="18" y="74" width="8" height="8" fill="#20D77A"/>
-
-                  {/* QR pattern matrix */}
-                  <rect x="42" y="14" width="6" height="6" fill="#03150D"/>
-                  <rect x="52" y="14" width="6" height="6" fill="#03150D"/>
-                  <rect x="42" y="24" width="6" height="16" fill="#03150D"/>
-                  <rect x="52" y="28" width="6" height="6" fill="#03150D"/>
-
-                  <rect x="14" y="44" width="6" height="12" fill="#03150D"/>
-                  <rect x="24" y="44" width="12" height="6" fill="#03150D"/>
-                  <rect x="42" y="44" width="16" height="16" fill="#20D77A"/>
-                  <rect x="66" y="44" width="8" height="8" fill="#03150D"/>
-                  <rect x="80" y="44" width="8" height="16" fill="#03150D"/>
-
-                  <rect x="42" y="66" width="10" height="6" fill="#03150D"/>
-                  <rect x="60" y="66" width="6" height="14" fill="#03150D"/>
-                  <rect x="74" y="66" width="14" height="6" fill="#03150D"/>
-                  <rect x="42" y="78" width="12" height="12" fill="#03150D"/>
-                  <rect x="74" y="80" width="14" height="8" fill="#20D77A"/>
-                </svg>
+              <div className="p-3 bg-white rounded-2xl mb-3 shadow-xl flex items-center justify-center min-w-[144px] min-h-[144px]">
+                {qrCodeDataUrl ? (
+                  <img 
+                    src={qrCodeDataUrl} 
+                    alt="Scan to Download AG Rider APK on Mobile" 
+                    className="w-[124px] h-[124px] rounded"
+                  />
+                ) : (
+                  <div className="w-[124px] h-[124px] flex items-center justify-center text-xs text-[#03150D] font-mono animate-pulse">
+                    Loading QR...
+                  </div>
+                )}
               </div>
               <span className="text-xs font-bold text-white flex items-center gap-1.5">
                 <QrCode className="w-3.5 h-3.5 text-[#20D77A]" />
                 Scan to Download on Phone
               </span>
-              <span className="text-[10px] text-[#748D7D] mt-0.5">
-                Open phone camera to scan & download APK
+              <span className="text-[10px] text-[#8AE7B6]/80 mt-0.5">
+                Point phone camera to open download page
               </span>
             </div>
 

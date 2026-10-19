@@ -31,19 +31,30 @@ export const About: React.FC = () => {
         <div className="space-y-8 mb-16">
           
           {/* Card 1: The Challenge */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-[#0A2418] border border-[#163B27] space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-[#071E14] border border-[#20D77A]/30 flex items-center justify-center text-[#20D77A]">
-              <Eye className="w-6 h-6" />
+          <div className="p-8 sm:p-10 rounded-3xl bg-[#0A2418] border border-[#163B27] space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7 space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-[#071E14] border border-[#20D77A]/30 flex items-center justify-center text-[#20D77A]">
+                  <Eye className="w-6 h-6" />
+                </div>
+                <h2 className="text-2xl font-bold text-white font-heading">
+                  Why Driver Accessibility Matters on Two-Wheelers
+                </h2>
+                <p className="text-sm sm:text-base text-[#A9C1B3] leading-relaxed">
+                  Operating a commercial motorcycle or scooter in high-density urban traffic presents significant physical demands. When smartphones are locked into handlebar mounts, riders face intense road vibrations, direct solar glare, wearing riding gloves, and tight 5-to-10 second acceptance windows on incoming ride offers.
+                </p>
+                <p className="text-sm sm:text-base text-[#A9C1B3] leading-relaxed">
+                  For drivers who experience mild motor impairments, coordination hurdles, tremors, or eye strain, physically finding and pressing a small button on a vibrating screen within seconds can cause missed requests, unsafe driving distractions, and unnecessary stress.
+                </p>
+              </div>
+              <div className="lg:col-span-5 rounded-2xl overflow-hidden border border-[#20D77A]/30 shadow-xl">
+                <img 
+                  src="/images/bike_handlebar_mount.jpg" 
+                  alt="Bike handlebar mount in urban traffic" 
+                  className="w-full h-60 sm:h-64 object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
             </div>
-            <h2 className="text-2xl font-bold text-white font-heading">
-              Why Driver Accessibility Matters
-            </h2>
-            <p className="text-sm sm:text-base text-[#A9C1B3] leading-relaxed">
-              Operating a commercial two-wheeler in high-density urban traffic presents significant physical demands. When smartphones are locked into handlebar mounts, riders face intense road vibrations, direct solar glare, wearing riding gloves, and tight 5-to-10 second acceptance windows on incoming ride offers.
-            </p>
-            <p className="text-sm sm:text-base text-[#A9C1B3] leading-relaxed">
-              For drivers who experience mild motor impairments, coordination hurdles, tremors, or eye strain, physically finding and pressing a small button on a vibrating screen within seconds can cause missed requests, unsafe driving distractions, and unnecessary stress.
-            </p>
           </div>
 
           {/* Card 2: The Solution */}

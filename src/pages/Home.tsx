@@ -51,14 +51,14 @@ export const Home: React.FC = () => {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A2418] border border-[#20D77A]/35 text-xs text-[#8AE7B6]">
                 <span className="w-2 h-2 rounded-full bg-[#20D77A] animate-pulse" />
-                <span className="font-semibold uppercase tracking-wider">Driver Assist Technology</span>
+                <span className="font-semibold uppercase tracking-wider">🏍️ Built for Two-Wheeler & Bike Taxi Captains</span>
                 <span className="text-[#748D7D]">•</span>
                 <span className="text-[#F3F8F4]">v{APP_CONFIG.version} Released</span>
               </div>
 
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-heading leading-[1.12]">
-                Ride Assistance. <br className="hidden sm:inline" />
+                Bike Ride Assistance. <br className="hidden sm:inline" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#20D77A] to-[#8AE7B6]">
                   Made More Accessible.
                 </span>
@@ -66,7 +66,7 @@ export const Home: React.FC = () => {
 
               {/* Tagline / Subtitle */}
               <p className="text-lg sm:text-xl text-[#A9C1B3] max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-                AG Rider is designed to help eligible professional drivers interact with supported ride-request screens through accessibility assistance and configurable controls.
+                AG Rider is purpose-built for motorcycle, scooter, and bike-taxi riders across Rapido, Uber Moto, and Ola. Keep your hands on the handlebars while our assistive engine filters and accepts compatible trips.
               </p>
 
               {/* CTA Group */}
@@ -76,14 +76,14 @@ export const Home: React.FC = () => {
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-[#20D77A] hover:bg-[#8AE7B6] text-[#03150D] font-extrabold text-base transition-all duration-200 shadow-xl shadow-[#20D77A]/20 hover:shadow-[#20D77A]/35 active:scale-95 cursor-pointer"
                 >
                   <Download className="w-5 h-5 stroke-[2.5]" />
-                  <span>Download the App</span>
+                  <span>Download APK ({APP_CONFIG.apkSize})</span>
                 </Link>
 
                 <Link
                   to="/features"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl bg-[#0A2418] hover:bg-[#103424] text-[#F3F8F4] border border-[#20D77A]/30 hover:border-[#20D77A] font-semibold text-base transition-all"
                 >
-                  <span>Explore Features</span>
+                  <span>Explore Bike Features</span>
                   <ChevronRight className="w-4 h-4 text-[#20D77A]" />
                 </Link>
               </div>
@@ -100,7 +100,7 @@ export const Home: React.FC = () => {
                 </div>
                 <div className="col-span-2 sm:col-span-1 p-3 rounded-xl bg-[#071E14]/70 border border-[#163B27] flex items-center gap-2.5">
                   <Smartphone className="w-5 h-5 text-[#20D77A] shrink-0" />
-                  <span className="text-xs text-[#A9C1B3] leading-snug">Direct APK No Bloatware</span>
+                  <span className="text-xs text-[#A9C1B3] leading-snug">Gloves-On Operation (0 Taps)</span>
                 </div>
               </div>
 
@@ -117,43 +117,106 @@ export const Home: React.FC = () => {
 
 
       {/* =========================================================================
-          COCKPIT BANNER: BIKE POV VIEW
+          COCKPIT BANNER: MOTORCYCLE HANDLEBAR POV VIEW
           ========================================================================= */}
       <section className="relative py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl overflow-hidden border border-[#20D77A]/25 shadow-2xl bg-[#0A2418]">
+        <div className="relative rounded-3xl overflow-hidden border border-[#20D77A]/30 shadow-2xl bg-[#0A2418]">
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             
             {/* Image side */}
-            <div className="lg:col-span-5 relative h-64 lg:h-80 overflow-hidden">
+            <div className="lg:col-span-6 relative h-72 sm:h-80 lg:h-96 overflow-hidden">
               <img 
-                src="/images/driver_cockpit.jpg" 
-                alt="Driver smartphone cockpit mounted on motorcycle" 
-                className="w-full h-full object-cover"
+                src="/images/bike_handlebar_mount.jpg" 
+                alt="Motorcycle handlebar mount running AG Rider ride assist" 
+                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-transparent to-[#0A2418]" />
+              <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-[#0A2418]/20 to-[#0A2418]" />
+              <div className="absolute bottom-4 left-4 px-3.5 py-1.5 rounded-xl bg-[#03150D]/90 backdrop-blur-md border border-[#20D77A]/40 text-xs text-[#8AE7B6] font-mono flex items-center gap-2 shadow-lg">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#20D77A] animate-ping" />
+                <span>Handlebar POV • City Traffic Assist</span>
+              </div>
             </div>
 
             {/* Content side */}
-            <div className="lg:col-span-7 p-6 sm:p-10 space-y-4">
-              <span className="text-xs font-bold tracking-widest text-[#20D77A] uppercase font-mono">
-                Engineered for Road Realities
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-heading">
-                Fast, Focused, and Ready for Every Ride
+            <div className="lg:col-span-6 p-6 sm:p-10 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#071E14] border border-[#20D77A]/30 text-xs text-[#20D77A] font-semibold font-mono">
+                <span>🏍️ Motorcycle Ergonomics</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
+                Engineered for Handlebar Phone Mounts
               </h2>
-              <p className="text-sm text-[#A9C1B3] leading-relaxed">
-                When you are navigating congested streets and mounted motorcycle displays, vibration, sunlight, and tight response windows make tapping small touch targets difficult. AG Rider provides a reliable assistive layer so eligible drivers can operate with confidence.
+              <p className="text-sm sm:text-base text-[#A9C1B3] leading-relaxed">
+                When riding a two-wheeler, tapping small touch targets on a vibrating handlebar-mounted phone is difficult and dangerous—especially when wearing riding gloves or facing intense afternoon sun glare.
               </p>
-              <div className="flex flex-wrap gap-4 pt-2 text-xs text-[#8AE7B6]">
+              <p className="text-sm sm:text-base text-[#A9C1B3] leading-relaxed">
+                AG Rider evaluates incoming ride requests within milliseconds based on your minimum fare and maximum distance limits, and automatically accepts qualifying rides. Your hands stay firmly on the grips.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-[#8AE7B6]">
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#20D77A]" /> 0ms Response Optimization
+                  <CheckCircle2 className="w-4 h-4 text-[#20D77A] shrink-0" /> Gloves-Friendly (0 Screen Taps)
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#20D77A]" /> Configurable Thresholds
+                  <CheckCircle2 className="w-4 h-4 text-[#20D77A] shrink-0" /> Vibration & Glare Resilient
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#20D77A]" /> Rapido & Ola Interface Context
+                  <CheckCircle2 className="w-4 h-4 text-[#20D77A] shrink-0" /> Rapido, Uber Moto & Ola
                 </span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#20D77A] shrink-0" /> Low Battery Consumption
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          BIKE TAXI CAPTAINS SHOWCASE
+          ========================================================================= */}
+      <section className="relative py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-3xl overflow-hidden border border-[#163B27] bg-gradient-to-br from-[#071E14] via-[#0A2418] to-[#03150D] p-6 sm:p-10 lg:p-12 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            {/* Text side */}
+            <div className="lg:col-span-7 space-y-5 order-2 lg:order-1">
+              <span className="text-xs font-bold tracking-widest text-[#20D77A] uppercase font-mono">
+                Real Captains • Everyday Reliability
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-heading">
+                Empowering Two-Wheeler Delivery & Bike Taxi Captains
+              </h2>
+              <p className="text-sm sm:text-base text-[#A9C1B3] leading-relaxed">
+                Whether you ride full-time or pick up peak-hour trips across the city, AG Rider eliminates the frantic rush to tap small accept buttons while steering through heavy traffic. Set your desired minimum fare and pickup radius once, and let the assistive service take care of the rest.
+              </p>
+              
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-2">
+                <div className="p-3 sm:p-4 rounded-2xl bg-[#03150D]/80 border border-[#163B27] text-center sm:text-left">
+                  <div className="text-xl sm:text-2xl font-black text-[#20D77A] font-mono">100%</div>
+                  <div className="text-[11px] sm:text-xs text-[#A9C1B3] mt-1 font-medium">Hands on Handlebars</div>
+                </div>
+                <div className="p-3 sm:p-4 rounded-2xl bg-[#03150D]/80 border border-[#163B27] text-center sm:text-left">
+                  <div className="text-xl sm:text-2xl font-black text-[#20D77A] font-mono">0ms</div>
+                  <div className="text-[11px] sm:text-xs text-[#A9C1B3] mt-1 font-medium">Assistive Delay</div>
+                </div>
+                <div className="p-3 sm:p-4 rounded-2xl bg-[#03150D]/80 border border-[#163B27] text-center sm:text-left">
+                  <div className="text-xl sm:text-2xl font-black text-[#20D77A] font-mono">24/7</div>
+                  <div className="text-[11px] sm:text-xs text-[#A9C1B3] mt-1 font-medium">Local Device Security</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Photo side */}
+            <div className="lg:col-span-5 order-1 lg:order-2 relative rounded-2xl overflow-hidden shadow-2xl border border-[#20D77A]/30">
+              <img 
+                src="/images/bike_taxi_rider.jpg" 
+                alt="Motorcycle taxi captain with bike in city street" 
+                className="w-full h-72 sm:h-80 lg:h-96 object-cover transform hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#03150D]/90 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 text-center sm:text-left">
+                <p className="text-sm font-bold text-white">Built for City Two-Wheeler Captains</p>
+                <p className="text-xs text-[#8AE7B6]">Full focus on riding safety, zero missed ride opportunities.</p>
               </div>
             </div>
 
