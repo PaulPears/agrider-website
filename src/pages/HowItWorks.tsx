@@ -19,7 +19,7 @@ export const HowItWorks: React.FC = () => {
     {
       num: '01',
       title: 'Download and Install the APK',
-      desc: 'Download AG-Rider-latest.apk directly from this official website. Open the downloaded file from your notifications or File Manager and permit "Install unknown apps" if prompted by your Android system.',
+      desc: `Download ${APP_CONFIG.downloadFileName} directly from this official website. Open the downloaded file from your notifications or File Manager and permit "Install unknown apps" if prompted by your Android system.`,
       tip: 'Download only from our official website to ensure verified security and integrity.'
     },
     {

@@ -21,12 +21,12 @@ export const APP_CONFIG = {
   domain: 'agrider.pro',
   siteUrl: 'https://agrider.pro',
   version: '2.4.1',
-  apkSize: '35.9 MB',
+  apkSize: '83.1 MB',
   minAndroid: 'Android 8.0 (Oreo) or later',
   releaseDate: 'July 2026',
-  downloadFileName: 'AG-Rider-latest.apk',
-  downloadPath: '/downloads/AG-Rider-latest.apk',
-  sha256: 'a8dcc021b8496db3568b764934a4db06394a85f4b5ff585931b0f77f061ee2f0',
+  downloadFileName: 'app-debug.apk',
+  downloadPath: '/downloads/app-debug.apk',
+  sha256: 'cb5401e5102364fba97c4550fb530bc665fe863d6a40303477c6bd3bf8d22672',
   supportEmail: 'support@agrider.pro',
   adminEmail: 'info.praisol@gmail.com',
   telegramHandle: '@agrider_support',
@@ -133,7 +133,7 @@ export const FAQ_DATA: FAQItem[] = [
   },
   {
     question: 'How do I download and install the AG Rider APK?',
-    answer: 'Click the "Download APK" button on this website to save the latest AG-Rider-latest.apk file. Open your Android notification panel or file manager, tap the downloaded APK, and allow "Install from unknown sources" if prompted by your Android security settings.',
+    answer: `Click the "Download APK" button on this website to save the latest ${APP_CONFIG.downloadFileName} file. Open your Android notification panel or file manager, tap the downloaded APK, and allow "Install from unknown sources" if prompted by your Android security settings.`,
     category: 'troubleshooting'
   },
   {

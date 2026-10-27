@@ -182,7 +182,7 @@ export const Download: React.FC = () => {
               </span>
               <h4 className="text-base font-bold text-white font-heading">Tap Downloaded File</h4>
               <p className="text-xs text-[#A9C1B3] leading-relaxed">
-                When the browser finishes downloading, tap the notification or navigate to your phone's <strong>Downloads</strong> folder and tap <code className="text-[#8AE7B6]">AG-Rider-latest.apk</code>.
+                When the browser finishes downloading, tap the notification or navigate to your phone's <strong>Downloads</strong> folder and tap <code className="text-[#8AE7B6]">{APP_CONFIG.downloadFileName}</code>.
               </p>
             </div>
 
