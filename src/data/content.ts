@@ -26,7 +26,7 @@ export const APP_CONFIG = {
   releaseDate: 'July 2026',
   downloadFileName: 'app-release.apk',
   downloadPath: '/downloads/app-release.apk',
-  sha256: 'a88227a1d2f854b58fc803e1dbfb859e538f3041100491530563bab2bd370fa4',
+  sha256: '5987cf46aee8136f999f4cf772fb7195e25dd3c512b5529b44439b307bd0da8c',
   supportEmail: 'support@agrider.pro',
   adminEmail: 'info.praisol@gmail.com',
   telegramHandle: '@agrider_support',
